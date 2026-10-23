@@ -8,6 +8,9 @@ export const Card = styled.article`
   position: relative;
   box-sizing: border-box;
   overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Imagem = styled.img`

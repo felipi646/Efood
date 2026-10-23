@@ -31,6 +31,12 @@ const Product = ({
   destaque,
 }: ProductProps) => {
   const navigate = useNavigate();
+  const getDescricao = (descricao: string) => {
+    if (descricao.length > 272) {
+      return descricao.slice(0, 250) + "...";
+    }
+    return descricao;
+  };
 
   return (
     <Card>
@@ -46,7 +52,7 @@ const Product = ({
           <Nota>{nota}⭐</Nota>
         </Cabecalho>
 
-        <Descricao>{descricao}</Descricao>
+        <Descricao>{getDescricao(descricao)}</Descricao>
 
         <Botao onClick={() => navigate("/restaurante/1")}>Saiba mais</Botao>
       </Conteudo>

@@ -22,10 +22,7 @@ export const Imagem = styled.img`
 
 export const Sobreposicao = styled.div`
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 310px;
+  inset: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
 `;
@@ -33,26 +30,23 @@ export const Sobreposicao = styled.div`
 export const Categoria = styled.span`
   position: absolute;
   top: 24px;
-  left: 10.5%;
+  left: max(calc((100% - 1024px) / 2), 16px);
   z-index: 2;
 
   font-family: "Roboto", sans-serif;
   font-size: 32px;
   font-weight: 100;
-  font-style: normal;
   line-height: 100%;
-  letter-spacing: 0;
   color: #fff;
 `;
 
 export const Nome = styled.h1`
   position: absolute;
-  left: 10.5%;
+  left: max(calc((100% - 1024px) / 2), 16px);
   bottom: 35px;
   z-index: 2;
 
   margin: 0;
-
   font-family: "Roboto", sans-serif;
   font-size: 32px;
   font-weight: 700;
@@ -60,9 +54,22 @@ export const Nome = styled.h1`
 `;
 
 export const Cardapio = styled.div`
-  width: 1024px;
-  margin: 40px auto 140px;
   display: grid;
   grid-template-columns: repeat(3, 320px);
-  gap: 24px 32px;
+  justify-content: center;
+  gap: 32px;
+  padding: 56px 0;
+  box-sizing: border-box;
+
+  @media (max-width: 1055px) {
+    width: calc(100% - 32px);
+    height: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+    gap: 24px;
+  }
+
+  @media (max-width: 700px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
 `;
