@@ -14,6 +14,7 @@ import {
 } from "./styles";
 
 interface ProductProps {
+  id: number;
   imagem: string;
   titulo: string;
   nota: number;
@@ -23,6 +24,7 @@ interface ProductProps {
 }
 
 const Product = ({
+  id,
   imagem,
   titulo,
   nota,
@@ -54,7 +56,7 @@ const Product = ({
 
         <Descricao>{getDescricao(descricao)}</Descricao>
 
-        <Botao onClick={() => navigate("/restaurante/1")}>Saiba mais</Botao>
+        <Botao onClick={() => navigate(`/restaurante/${id}`)}>Saiba mais</Botao>
       </Conteudo>
     </Card>
   );
