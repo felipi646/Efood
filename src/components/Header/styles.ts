@@ -4,19 +4,21 @@ export const HeaderContainer = styled.header`
   width: 100%;
   height: 162px;
   background-color: #ffebd9;
-  position: relative;
 `;
 
 export const HeaderContent = styled.div`
-  width: 100%;
+  width: calc(100% - 48px);
+  max-width: 1024px;
   height: 100%;
-  position: relative;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
 `;
 
 export const Restaurantes = styled.span`
-  position: absolute;
-  top: 59px;
-  left: 171px;
+  justify-self: start;
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   font-weight: 700;
@@ -26,22 +28,16 @@ export const Restaurantes = styled.span`
 export const Logo = styled.img`
   width: 125px;
   height: 57.5px;
-  position: absolute;
-  top: 40px;
-  left: 50%;
-  transform: translateX(-50%);
+  object-fit: contain;
   cursor: pointer;
 `;
 
 export const CartButton = styled.span`
-  position: absolute;
-  top: 59px;
-  left: 1150px;
-  width: 256px;
-  height: 21px;
+  justify-self: end;
+  white-space: nowrap;
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   font-weight: 700;
   color: #e66767;
-  text-aling: right;
+  text-align: right;
 `;
