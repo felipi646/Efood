@@ -28,9 +28,8 @@ export const RedesSociais = styled.img`
 export const Rede = styled.span`
   font-family: "Roboto", sans-serif;
   font-size: 12px;
-  font-weight:
-    700,
-    color #e66767;
+  font-weight: 700;
+  color: #e66767;
 `;
 
 export const Texto = styled.p`

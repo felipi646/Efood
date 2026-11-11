@@ -4,6 +4,8 @@ import { Card, Imagem, Titulo, Descricao, Botao } from "./styles";
 import ModalProduto from "../Modal";
 
 interface MenuItemProps {
+  id: number;
+  restauranteId: number;
   imagem: string;
   titulo: string;
   descricao: string;
@@ -13,6 +15,8 @@ interface MenuItemProps {
 }
 
 const MenuItem = ({
+  id,
+  restauranteId,
   imagem,
   titulo,
   descricao,
@@ -28,17 +32,17 @@ const MenuItem = ({
         <Imagem src={imagem} alt={titulo} />
         <Titulo>{titulo}</Titulo>
         <Descricao>{descricao}</Descricao>
-        <Botao onClick={() => setModalAberta(true)}>
-          Adicionar ao carrinho
-        </Botao>
+        <Botao onClick={() => setModalAberta(true)}>Mais detalhes</Botao>
       </Card>
       {modalAberta && (
         <ModalProduto
+          id={id}
+          restauranteId={restauranteId}
           imagem={imagem}
           titulo={titulo}
           descricao={descricaoModal}
           porcao={porcao}
-          preco={preco.toFixed(2).replace(".", ",")}
+          preco={preco}
           aoFechar={() => setModalAberta(false)}
         />
       )}

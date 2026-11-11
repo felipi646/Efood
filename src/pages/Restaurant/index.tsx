@@ -13,8 +13,9 @@ import {
 import MenuItem from "../../components/MenuItem";
 import Footer from "../../components/Footer";
 
-interface Produto {
+export interface Produto {
   id: number;
+  restauranteId: number;
   nome: string;
   foto: string;
   descricao: string;
@@ -63,6 +64,8 @@ const Restaurant = () => {
         {restaurante.cardapio.map((produto) => (
           <MenuItem
             key={produto.id}
+            id={produto.id}
+            restauranteId={restaurante.id}
             imagem={produto.foto}
             titulo={produto.nome}
             descricao={produto.descricao}
